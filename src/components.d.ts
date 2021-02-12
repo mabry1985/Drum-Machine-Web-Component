@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface JmDrumMachineLcd {
-        "AudioFileName": string;
     }
     interface JmDrumMachinePad {
         "audioFileName": string;
@@ -54,7 +53,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface JmDrumMachineLcd {
-        "AudioFileName"?: string;
     }
     interface JmDrumMachinePad {
         "audioFileName"?: string;

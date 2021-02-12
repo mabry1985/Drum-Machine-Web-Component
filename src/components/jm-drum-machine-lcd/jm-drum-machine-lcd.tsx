@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Listen } from '@stencil/core';
+import { Component, Host, h, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'jm-drum-machine-lcd',
@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, Listen } from '@stencil/core';
   shadow: true,
 })
 export class JmDrumMachineLcd {
-  @Prop() AudioFileName: string;
+  @State() AudioFileName: string;
 
   @Listen('jmPadHovered', { target: "body" })
   onDrumPadHovered(event: CustomEvent) {
