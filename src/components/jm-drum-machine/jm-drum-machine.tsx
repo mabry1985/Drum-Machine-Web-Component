@@ -21,7 +21,21 @@ export class JmDrumMachine {
     return (
       <Host>
         <div class="drum-machine-container">
-          <jm-drum-machine-lcd />
+          <div class="controls-container">
+            <jm-drum-machine-lcd />
+          <div class="mock-speaker-container">
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+            <div class="mock-speaker-slot" />
+          </div>
+          </div>
           <div class="drum-pad-container">
             {this.audioFileNamesArray.map(fileName => (
               <div>
