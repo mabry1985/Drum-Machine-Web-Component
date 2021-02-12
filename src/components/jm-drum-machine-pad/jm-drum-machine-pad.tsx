@@ -17,16 +17,18 @@ export class JmDrumMachinePad {
     new Audio(getAssetPath(`./assets/${this.audioFileName}`)).play();
     setTimeout(() => (this.pressed = false), 150);
   };
-  
+
   onPadHover = (audioFileName: string) => {
     this.jmPadHovered.emit(audioFileName);
-  }
+  };
 
   render() {
     return (
       <Host>
-        <div class={this.pressed ? 'pressed drum-pad' : 'drum-pad'} onClick={this.onPadClick}
-        onMouseEnter={() => this.onPadHover(this.audioFileName)}></div>
+        <div 
+          class={this.pressed ? 'pressed drum-pad' : 'drum-pad'} 
+          onClick={this.onPadClick} 
+          onMouseEnter={() => this.onPadHover(this.audioFileName)} />
       </Host>
     );
   }

@@ -6,16 +6,7 @@ import { Component, Host, h, State, Prop } from '@stencil/core';
   shadow: true,
 })
 export class JmDrumMachine {
-  @State() audioFileNamesArray: string[];
-  @Prop() audioFileNames: string;
-
-  componentWillLoad() {
-    this.audioFileNamesArray = this.convertFileNamesToArray(this.audioFileNames);
-  }
-
-  convertFileNamesToArray(fileNames: string) {
-    return fileNames.split(' ');
-  }
+  @State() audioFileNamesArray = ["closed-hh-01.wav", "kick-01.wav", "kick-02.wav", "open-hh-01.wav", "snare-01.wav", "snare-02.wav", "tom-01.wav", "tom-02.wav"];
 
   render() {
     return (
