@@ -13,14 +13,12 @@ export class JmDrumMachinePad {
   @Event({ bubbles: true, composed: true }) jmPadHovered: EventEmitter<string>;
 
   onPadClick = () => {
-    console.log('pad clicked', this.audioFileName);
     this.pressed = true;
     new Audio(getAssetPath(`./assets/${this.audioFileName}`)).play();
     setTimeout(() => (this.pressed = false), 150);
   };
   
   onPadHover = (audioFileName: string) => {
-    console.log(audioFileName);
     this.jmPadHovered.emit(audioFileName);
   }
 
