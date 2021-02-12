@@ -6,9 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface JmDrumMachineLcd {
+        "AudioFileName": string;
+    }
     interface JmDrumMachinePad {
         "audioFileName": string;
-        "title": string;
     }
     interface MyComponent {
         /**
@@ -26,6 +28,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLJmDrumMachineLcdElement extends Components.JmDrumMachineLcd, HTMLStencilElement {
+    }
+    var HTMLJmDrumMachineLcdElement: {
+        prototype: HTMLJmDrumMachineLcdElement;
+        new (): HTMLJmDrumMachineLcdElement;
+    };
     interface HTMLJmDrumMachinePadElement extends Components.JmDrumMachinePad, HTMLStencilElement {
     }
     var HTMLJmDrumMachinePadElement: {
@@ -39,14 +47,17 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "jm-drum-machine-lcd": HTMLJmDrumMachineLcdElement;
         "jm-drum-machine-pad": HTMLJmDrumMachinePadElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface JmDrumMachineLcd {
+        "AudioFileName"?: string;
+    }
     interface JmDrumMachinePad {
         "audioFileName"?: string;
-        "title"?: string;
     }
     interface MyComponent {
         /**
@@ -63,6 +74,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "jm-drum-machine-lcd": JmDrumMachineLcd;
         "jm-drum-machine-pad": JmDrumMachinePad;
         "my-component": MyComponent;
     }
@@ -71,6 +83,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "jm-drum-machine-lcd": LocalJSX.JmDrumMachineLcd & JSXBase.HTMLAttributes<HTMLJmDrumMachineLcdElement>;
             "jm-drum-machine-pad": LocalJSX.JmDrumMachinePad & JSXBase.HTMLAttributes<HTMLJmDrumMachinePadElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
