@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface JmDrumMachine {
+    }
     interface JmDrumMachineLcd {
     }
     interface JmDrumMachinePad {
@@ -27,6 +29,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLJmDrumMachineElement extends Components.JmDrumMachine, HTMLStencilElement {
+    }
+    var HTMLJmDrumMachineElement: {
+        prototype: HTMLJmDrumMachineElement;
+        new (): HTMLJmDrumMachineElement;
+    };
     interface HTMLJmDrumMachineLcdElement extends Components.JmDrumMachineLcd, HTMLStencilElement {
     }
     var HTMLJmDrumMachineLcdElement: {
@@ -46,12 +54,15 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "jm-drum-machine": HTMLJmDrumMachineElement;
         "jm-drum-machine-lcd": HTMLJmDrumMachineLcdElement;
         "jm-drum-machine-pad": HTMLJmDrumMachinePadElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface JmDrumMachine {
+    }
     interface JmDrumMachineLcd {
     }
     interface JmDrumMachinePad {
@@ -73,6 +84,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "jm-drum-machine": JmDrumMachine;
         "jm-drum-machine-lcd": JmDrumMachineLcd;
         "jm-drum-machine-pad": JmDrumMachinePad;
         "my-component": MyComponent;
@@ -82,6 +94,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "jm-drum-machine": LocalJSX.JmDrumMachine & JSXBase.HTMLAttributes<HTMLJmDrumMachineElement>;
             "jm-drum-machine-lcd": LocalJSX.JmDrumMachineLcd & JSXBase.HTMLAttributes<HTMLJmDrumMachineLcdElement>;
             "jm-drum-machine-pad": LocalJSX.JmDrumMachinePad & JSXBase.HTMLAttributes<HTMLJmDrumMachinePadElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
