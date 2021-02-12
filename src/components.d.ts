@@ -58,6 +58,7 @@ declare namespace LocalJSX {
     }
     interface JmDrumMachinePad {
         "audioFileName"?: string;
+        "onJmPadHovered"?: (event: CustomEvent<string>) => void;
     }
     interface MyComponent {
         /**
