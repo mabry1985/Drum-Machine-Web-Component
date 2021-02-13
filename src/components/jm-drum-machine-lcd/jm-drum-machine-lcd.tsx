@@ -6,12 +6,12 @@ import { Component, Host, h, Listen, State } from '@stencil/core';
   shadow: true,
 })
 export class JmDrumMachineLcd {
-  @State() AudioFileName: string;
+  @State() audioFileName: string;
 
   @Listen('jmPadHovered', { target: "body" })
   onDrumPadHovered(event: CustomEvent) {
-    if (event.detail && event.detail !== this.AudioFileName) {
-      this.AudioFileName = event.detail;
+    if (event.detail && event.detail !== this.audioFileName) {
+      this.audioFileName = event.detail;
     }
   }
 
@@ -20,7 +20,7 @@ export class JmDrumMachineLcd {
       <Host>
         <div class="lcd-container">
           <h2 class="header">Drum Machine</h2>
-          <p class="audio-file-name">{this.AudioFileName}</p>
+          <p class="audio-file-name">{this.audioFileName}</p>
         </div>
       </Host>
     );
